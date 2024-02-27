@@ -1,9 +1,13 @@
+import { Link } from 'react-router-dom';
+
 function Home() {
   return (
     <div className="flex flex-col min-h-svh justify-between bg-black bg-opacity-50">
       <header className="flex flex-col text-center justify-between sm:flex-col md:flex-row lg:flex-row bg-black bg-opacity-85">
         <div className="flex flex-wrap justify-center py-4 px-10">
-          <h1 className="text-5xl cursor-pointer">S</h1>
+          <Link to='/'>
+            <h1 className="text-5xl cursor-pointer">S</h1>
+          </Link>
           <nav className="flex items-center text-2xl px-10 space-x-10 *:cursor-pointer">
             <p>Men</p>
             <p>Woman</p>
