@@ -22,4 +22,25 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background: url('./assets/background.jpg') center/cover no-repeat;
+  overflow: hidden;
+}
+
+/* Animations */
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(30%);
+    opacity: 0%;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+}
+
+.slide-in {
+  animation: slideInFromRight 2s ease-in-out;
+}
+
+.slide-in-2 {
+  animation: slideInFromRight 2.2s ease-in-out;
 }
