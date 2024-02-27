@@ -9,8 +9,12 @@ function Home() {
             <h1 className="text-5xl cursor-pointer">S</h1>
           </Link>
           <nav className="flex items-center text-2xl px-10 space-x-10 *:cursor-pointer">
-            <p>Men</p>
-            <p>Woman</p>
+            <Link to='/shop/men'>
+              <p>Men</p>
+            </Link>
+            <Link to='/shop/women'>
+              <p>Women</p>
+            </Link>
             <p>Sale</p>
           </nav>
         </div>
