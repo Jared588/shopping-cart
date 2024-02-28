@@ -6,7 +6,7 @@ function Home() {
       <header className="flex flex-col text-center justify-between sm:flex-col md:flex-row lg:flex-row bg-black bg-opacity-85">
         <div className="flex flex-wrap justify-center py-4 px-10">
           <Link to='/home'>
-            <h1 className="text-5xl cursor-pointer">S</h1>
+            <h1 aria-label='title' className="text-5xl cursor-pointer">S</h1>
           </Link>
           <nav aria-label='primary-nav' className="flex items-center text-2xl px-10 space-x-10 *:cursor-pointer">
             <Link to='/shop/men'>

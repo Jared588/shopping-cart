@@ -6,7 +6,7 @@ export function Men() {
         <header className="flex flex-col text-center justify-between sm:flex-col md:flex-row lg:flex-row bg-black bg-opacity-85">
             <div className="flex flex-wrap justify-center py-4 px-10">
             <Link to='/home'>
-                <h1 className="text-5xl cursor-pointer">S</h1>
+                <h1 aria-label='title' className="text-5xl cursor-pointer">S</h1>
             </Link>
             <nav className="flex items-center text-2xl px-10 space-x-10 *:cursor-pointer">
                 <Link to='/shop/men'>
@@ -27,8 +27,8 @@ export function Men() {
         <div className='bg-neutral-300 text-black text-center font-semibold fade-in'>Dont Miss Our 50% Sale!</div>
             <div className="text-5xl bg-black bg-opacity-80 border-t grid grid-cols-4 flex-auto px-16 py-10">
                 <div className='border-r col-span-1 flex flex-col'>
-                    <p className='text-4xl font-semibold slide-in'>Mens Wear</p>
-                    <ul className='text-2xl px-2 py-6 space-y-2 *:cursor-pointer slide-in-2'>
+                    <h2 aria-label='mens-heading' className='text-4xl font-semibold slide-in'>Mens Wear</h2>
+                    <ul aria-label='mens-categories' className='text-2xl px-2 py-6 space-y-2 *:cursor-pointer slide-in-2'>
                         <li>Shirts</li>
                         <li>Shoes</li>
                         <li>Misc.</li>
@@ -48,7 +48,7 @@ export function Women() {
           <header className="flex flex-col text-center justify-between sm:flex-col md:flex-row lg:flex-row bg-black bg-opacity-85">
             <div className="flex flex-wrap justify-center py-4 px-10">
               <Link to='/home'>
-                <h1 className="text-5xl cursor-pointer">S</h1>
+                <h1 aria-label='title' className="text-5xl cursor-pointer">S</h1>
               </Link>
               <nav className="flex items-center text-2xl px-10 space-x-10 *:cursor-pointer">
                 <Link to='/shop/men'>

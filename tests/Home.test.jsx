@@ -5,7 +5,7 @@ import Router from '../src/routes/Router';
 describe('Home component', () => {
     it('renders correct heading', () => {
         render(<Router />);
-        expect(screen.getByRole('heading').textContent).toMatch(/S/i);
+        expect(screen.getByRole('heading', {name: /title/}).textContent).toMatch(/S/i);
     })
 
     it('renders navbar', () => {
