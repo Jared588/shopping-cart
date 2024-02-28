@@ -25,10 +25,19 @@ export function Men() {
             </nav>
         </header>
         <div className='bg-neutral-300 text-black text-center font-semibold fade-in'>Dont Miss Our 50% Sale!</div>
-        <div className="text-5xl bg-black bg-opacity-50 border-t flex flex-auto justify-left items-center text-left px-16">
-
-        </div>
-        <footer className="text-center bg-black bg-opacity-50">Copyright © Jared588</footer>
+            <div className="text-5xl bg-black bg-opacity-80 border-t grid grid-cols-4 flex-auto px-16 py-10">
+                <div className='border-r col-span-1 flex flex-col'>
+                    <p className='text-4xl font-semibold slide-in'>Mens Wear</p>
+                    <ul className='text-2xl px-2 py-6 space-y-2 *:cursor-pointer slide-in-2'>
+                        <li>Shirts</li>
+                        <li>Shoes</li>
+                        <li>Misc.</li>
+                    </ul>
+                </div>
+                <div className='flex-auto col-span-3'>
+                    
+                </div>
+            </div>
         </div>
     )
 }
