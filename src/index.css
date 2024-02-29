@@ -57,3 +57,9 @@ body {
 .fade-in {
   animation: fadeIn 2s ease-in-out;
 }
+
+.items-container {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+}
