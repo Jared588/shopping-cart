@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import ShirtC from '../components/Item';
 
 export function Men() {
     return (
@@ -34,8 +35,8 @@ export function Men() {
                         <li>Misc.</li>
                     </ul>
                 </div>
-                <div className='flex-auto col-span-3'>
-                    
+                <div data-testid="items-container" className='flex-auto col-span-3'>
+                    {ShirtC('Test', '$39.99', 'blue', 'yellow')}
                 </div>
             </div>
         </div>

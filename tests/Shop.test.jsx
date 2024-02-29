@@ -24,4 +24,14 @@ describe('Mens Section', () => {
         expect(mensCategories[1].textContent).toMatch(/Shoes/);
         expect(mensCategories[2].textContent).toMatch(/Misc./);
     })
+
+    it('renders items correctly', () => {
+        render(
+            <BrowserRouter>
+                <Men />
+            </BrowserRouter>
+        );
+        const itemsContainer = screen.getByTestId('items-container')
+        expect(itemsContainer.children.length).toBeGreaterThan(0)
+    })
 })
