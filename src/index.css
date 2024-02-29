@@ -22,7 +22,6 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background: url('./assets/background.jpg') center/cover no-repeat;
-  overflow: hidden;
 }
 
 /* Animations */

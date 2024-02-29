@@ -26,7 +26,7 @@ export function Men() {
             </nav>
         </header>
         <div className='bg-neutral-300 text-black text-center font-semibold fade-in'>Dont Miss Our 50% Sale!</div>
-            <div className="text-5xl bg-black bg-opacity-80 border-t grid grid-cols-4 flex-auto px-16 py-10">
+            <div className="text-5xl bg-black bg-opacity-80 border-t grid grid-cols-4 flex-auto px-16 py-10 overflow-hidden">
                 <div className='border-r col-span-1 flex flex-col'>
                     <h2 aria-label='mens-heading' className='text-4xl font-semibold slide-in'>Mens Wear</h2>
                     <ul aria-label='mens-categories' className='text-2xl px-2 py-6 space-y-2 *:cursor-pointer slide-in-2'>
@@ -36,11 +36,11 @@ export function Men() {
                     </ul>
                 </div>
                 <div className='flex-auto col-span-3 p-10'>
-                  <div data-testid="items-container" className="items-container gap-5">
-                    {ShirtC('Test', '$39.99', 'white')}
-                    {ShirtC('Test', '$39.99', 'gray')}
-                    {ShirtC('Test', '$39.99', 'black')}
-                    {ShirtC('Test', '$39.99', 'silver')}
+                  <div data-testid="items-container" className="items-container gap-5 slide-in">
+                    {ShirtC('T-shirt - white', '$39.99', 'white')}
+                    {ShirtC('T-shirt - grey', '$39.99', 'gray')}
+                    {ShirtC('T-shirt - black', '$39.99', 'black')}
+                    {ShirtC('T-shirt - silver', '$39.99', 'silver')}
                   </div>
                 </div>
             </div>
