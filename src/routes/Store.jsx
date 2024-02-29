@@ -34,15 +34,23 @@ function Store() {
                 </div>
                 <div className='flex-auto col-span-5 p-10'>
                   <div data-testid="items-container" className="items-container gap-5 slide-in">
-                    {ShirtC('T-shirt - white', '$39.99', 'white')}
-                    {ShirtC('T-shirt - grey', '$39.99', 'gray')}
-                    {ShirtC('T-shirt - black', '$39.99', 'black')}
-                    {ShirtC('T-shirt - silver', '$39.99', 'silver')}
+                    {shirts.map((shirt, index) => (
+                        <div key={index}>
+                            {shirt}
+                        </div>
+                    ))}
                   </div>
                 </div>
             </div>
         </div>
     )
 }
+
+const shirts = [
+    ShirtC('T-shirt - white', '$39.99', 'white'),
+    ShirtC('T-shirt - grey', '$39.99', 'gray'),
+    ShirtC('T-shirt - black', '$39.99', 'black'),
+    ShirtC('T-shirt - silver', '$39.99', 'silver')
+]
 
 export default Store
