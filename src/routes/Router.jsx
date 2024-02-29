@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider, Routes, Route, Navigate } from 'react-router-dom';
 import App from '../App';
 import ErrorPage from './ErrorPage';
-import { Men, Women } from './Shop';
+import Store from './Store';
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -16,11 +16,12 @@ const Router = () => {
       errorElement: <ErrorPage />,
     },
     {
-      path: '/shop/*',
+      path: '/store/*',
       element: <Routes>
-        <Route path="/" element={<Navigate to="/shop/men" />} />
-        <Route path="men" element={<Men />} />
-        <Route path="women" element={<Women />} />
+        <Route path="/" element={<Store />} />
+        <Route path="shirts" element={<Store />} />
+        <Route path="shoes" element={<Store />} />
+        <Route path="shoes" element={<Store />} />
       </Routes>,
       errorElement: <ErrorPage />,
     },

@@ -1,34 +1,34 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { Men } from '../src/routes/Shop';
+import Store from '../src/routes/Store';
 import { BrowserRouter } from 'react-router-dom';
 
-describe('Mens Section', () => {
-    it('renders mens section', () => {
+describe('Store', () => {
+    it('renders store page', () => {
         render(
             <BrowserRouter>
-                <Men />
+                <Store />
             </BrowserRouter>
         );
-        expect(screen.getByRole('heading', {name: /mens-heading/}).textContent).toMatch(/Mens Wear/i);
+        expect(screen.getByRole('heading', {name: /filter-heading/}).textContent).toMatch(/categories/i);
     })
 
     it('renders categories', () => {
         render(
             <BrowserRouter>
-                <Men />
+                <Store />
             </BrowserRouter>
         );
-        const mensCategories = screen.getByRole('list', {name: /mens-categories/}).children;
-        expect(mensCategories[0].textContent).toMatch(/Shirts/);
-        expect(mensCategories[1].textContent).toMatch(/Shoes/);
-        expect(mensCategories[2].textContent).toMatch(/Misc./);
+        const categories = screen.getByRole('list', {name: /categories/}).children;
+        expect(categories[0].textContent).toMatch(/Shirts/);
+        expect(categories[1].textContent).toMatch(/Shoes/);
+        expect(categories[2].textContent).toMatch(/Misc./);
     })
 
     it('renders items correctly', () => {
         render(
             <BrowserRouter>
-                <Men />
+                <Store />
             </BrowserRouter>
         );
         const itemsContainer = screen.getByTestId('items-container')

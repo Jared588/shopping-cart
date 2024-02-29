@@ -9,11 +9,8 @@ function Home() {
             <h1 aria-label='title' className="text-5xl cursor-pointer">S</h1>
           </Link>
           <nav aria-label='primary-nav' className="flex items-center text-2xl px-10 space-x-10 *:cursor-pointer">
-            <Link to='/shop/men'>
-              <p>Men</p>
-            </Link>
-            <Link to='/shop/women'>
-              <p>Women</p>
+            <Link to='/store'>
+              <p>Store</p>
             </Link>
             <p>Sale</p>
           </nav>
