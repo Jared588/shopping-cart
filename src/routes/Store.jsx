@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ShirtC, ShirtV } from '../components/Item';
+import { CreateItem } from '../components/Item';
 
 function Store() {
     return (
@@ -47,14 +47,14 @@ function Store() {
 }
 
 const shirts = [
-    ShirtC('T-shirt - white', '$39.99', 'white'),
-    ShirtC('T-shirt - grey', '$39.99', 'gray'),
-    ShirtC('T-shirt - black', '$39.99', 'black'),
-    ShirtC('T-shirt - silver', '$39.99', 'silver'),
+    CreateItem('shirtC', 'T-shirt - white', '$39.99', 'white'),
+    CreateItem('shirtC', 'T-shirt - grey', '$39.99', 'gray'),
+    CreateItem('shirtC', 'T-shirt - black', '$39.99', 'black'),
+    CreateItem('shirtC', 'T-shirt - silver', '$39.99', 'silver'),
 
-    ShirtV('T-shirt - purple', '$39.99', 'purple'),
-    ShirtV('T-shirt - pink', '$39.99', 'pink'),
-    ShirtV('T-shirt - teal', '$39.99', 'teal'),
+    CreateItem('shirtV', 'T-shirt - purple', '$39.99', 'purple'),
+    CreateItem('shirtV', 'T-shirt - pink', '$39.99', 'pink'),
+    CreateItem('shirtV', 'T-shirt - teal', '$39.99', 'teal'),
 ]
 
 export default Store
