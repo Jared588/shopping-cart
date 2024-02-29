@@ -5,8 +5,9 @@ function ShirtC (title, price, pColor) {
       <div className=''>{tShirtC}</div>
       <div className="border-t">
         <p className="text-2xl mt-1">{title}</p>
-        <p className="w-fit text-xl">{price}</p>
+        <p className="w-fit text-xl">{price}</p> 
       </div>
+      <button className="flex items-center justify-center text-base bg-slate-400/20 rounded-xl mt-2 hover:bg-slate-300/40">Add to Cart +</button>
     </div>
   );
 }

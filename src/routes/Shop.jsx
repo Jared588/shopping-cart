@@ -37,11 +37,10 @@ export function Men() {
                 </div>
                 <div className='flex-auto col-span-3 p-10'>
                   <div data-testid="items-container" className="items-container gap-5">
-                    {ShirtC('Test', '$39.99', 'blue')}
-                    {ShirtC('Test', '$39.99', 'green')}
-                    {ShirtC('Test', '$39.99', 'red')}
-                    {ShirtC('Test', '$39.99', 'pink')}
-                    {ShirtC('Test', '$39.99', 'orange')}
+                    {ShirtC('Test', '$39.99', 'white')}
+                    {ShirtC('Test', '$39.99', 'gray')}
+                    {ShirtC('Test', '$39.99', 'black')}
+                    {ShirtC('Test', '$39.99', 'silver')}
                   </div>
                 </div>
             </div>
