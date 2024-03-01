@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import { CreateItem } from '../components/Item';
+import { useState } from 'react';
 
 function Store() {
+    const [filter, setFilter] = useState('all');
+
     return (
         <div className="flex flex-col min-h-svh justify-between bg-black bg-opacity-50">
         <header className="flex flex-col text-center justify-between sm:flex-col md:flex-row lg:flex-row bg-black bg-opacity-85">
@@ -27,35 +30,44 @@ function Store() {
                 <div className='border-r col-span-1 flex flex-col'>
                     <h2 aria-label='filter-heading' className='text-4xl font-semibold slide-in text-slate-500'>Categories</h2>
                     <ul aria-label='categories' className='text-2xl px-2 py-6 space-y-4 *:cursor-pointer slide-in-2'>
-                        <li>Shirts</li>
-                        <li>Shoes</li>
-                        <li>Misc.</li>
+                        <li onClick={() => setFilter('shirts')}>Shirts</li>
+                        <li onClick={() => setFilter('shoes')}>Shoes</li>
+                        <li onClick={() => setFilter('misc')}>Misc.</li>
                     </ul>
                 </div>
                 <div className='flex-auto col-span-5 p-10'>
-                  <div data-testid="items-container" className="items-container gap-5 slide-in">
-                    {shirts.map((shirt, index) => (
-                        <div key={index}>
-                            {shirt}
+                    {/* Shirts */}
+                    {(filter === 'all' || filter === 'shirts') &&
+                        <div data-testid="items-container" className="items-container gap-5 slide-in">
+                            {shirts.map((shirt, index) => (
+                                <div key={index}>
+                                    {shirt}
+                                </div>
+                            ))}
                         </div>
-                    ))}
-                  </div>
-                  <hr className='m-10'/>
-                  <div data-testid="items-container" className="items-container gap-5 slide-in">
-                    {shoes.map((shoe, index) => (
-                        <div key={index}>
-                            {shoe}
+                    }
+                    {filter === 'all' && <hr className='m-10'/>}
+                    {/* Shoes */}
+                    {(filter === 'all' || filter === 'shoes') &&
+                        <div data-testid="items-container" className="items-container gap-5 slide-in">
+                            {shoes.map((shoe, index) => (
+                                <div key={index}>
+                                    {shoe}
+                                </div>
+                            ))}
                         </div>
-                    ))}
-                  </div>
-                  <hr className='m-10'/>
-                  <div data-testid="items-container" className="items-container gap-5 slide-in">
-                    {misc.map((item, index) => (
-                        <div key={index}>
-                            {item}
+                    }
+                    {filter === 'all' && <hr className='m-10'/>}
+                    {/* Misc. */}
+                    {(filter === 'all' || filter === 'misc') &&
+                        <div data-testid="items-container" className="items-container gap-5 slide-in">
+                            {misc.map((item, index) => (
+                                <div key={index}>
+                                    {item}
+                                </div>
+                            ))}
                         </div>
-                    ))}
-                  </div>
+                    }           
                 </div>
             </div>
         </div>
