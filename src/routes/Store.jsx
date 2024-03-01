@@ -3,7 +3,7 @@ import { CreateItem } from '../components/Item';
 import { useState } from 'react';
 
 function Store() {
-    const [filter, setFilter] = useState('all');
+    const [filter, setFilter] = useState('shirts');
 
     return (
         <div className="flex flex-col min-h-svh justify-between bg-black bg-opacity-50">
@@ -37,7 +37,7 @@ function Store() {
                 </div>
                 <div className='flex-auto col-span-5 p-10'>
                     {/* Shirts */}
-                    {(filter === 'all' || filter === 'shirts') &&
+                    {(filter === 'shirts') &&
                         <div data-testid="shirts-container" className="items-container gap-5 slide-in">
                             {shirts.map((shirt, index) => (
                                 <div key={index}>
@@ -46,9 +46,8 @@ function Store() {
                             ))}
                         </div>
                     }
-                    {filter === 'all' && <hr className='m-10'/>}
                     {/* Shoes */}
-                    {(filter === 'all' || filter === 'shoes') &&
+                    {(filter === 'shoes') &&
                         <div data-testid="shoes-container" className="items-container gap-5 slide-in">
                             {shoes.map((shoe, index) => (
                                 <div key={index}>
@@ -57,9 +56,8 @@ function Store() {
                             ))}
                         </div>
                     }
-                    {filter === 'all' && <hr className='m-10'/>}
                     {/* Misc. */}
-                    {(filter === 'all' || filter === 'misc') &&
+                    {(filter === 'misc') &&
                         <div data-testid="misc-container" className="items-container gap-5 slide-in">
                             {misc.map((item, index) => (
                                 <div key={index}>
