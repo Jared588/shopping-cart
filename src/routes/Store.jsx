@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { CreateItem } from '../components/Item';
 import { useState } from 'react';
+import CreateCategory from '../components/CreateCategory';
 
 function Store() {
     const [filter, setFilter] = useState('shirts');
@@ -37,35 +38,11 @@ function Store() {
                 </div>
                 <div className='flex-auto col-span-5 p-10'>
                     {/* Shirts */}
-                    {(filter === 'shirts') &&
-                        <div data-testid="shirts-container" className="items-container gap-5 slide-in">
-                            {shirts.map((shirt, index) => (
-                                <div key={index}>
-                                    {shirt}
-                                </div>
-                            ))}
-                        </div>
-                    }
+                    {(filter === 'shirts') && <CreateCategory name='shirts' array={shirts} />}
                     {/* Shoes */}
-                    {(filter === 'shoes') &&
-                        <div data-testid="shoes-container" className="items-container gap-5 slide-in">
-                            {shoes.map((shoe, index) => (
-                                <div key={index}>
-                                    {shoe}
-                                </div>
-                            ))}
-                        </div>
-                    }
+                    {(filter === 'shoes') && <CreateCategory name='shoes' array={shoes} />}
                     {/* Misc. */}
-                    {(filter === 'misc') &&
-                        <div data-testid="misc-container" className="items-container gap-5 slide-in">
-                            {misc.map((item, index) => (
-                                <div key={index}>
-                                    {item}
-                                </div>
-                            ))}
-                        </div>
-                    }           
+                    {(filter === 'misc') && <CreateCategory name='misc' array={misc} />}           
                 </div>
             </div>
         </div>
