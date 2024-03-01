@@ -26,7 +26,9 @@ function Home() {
         <div>
           <p className="slide-in mb-5 text-6xl">Style. Simplified.</p>
           <p className="slide-in-2 mb-2 text-3xl">Browse our catalogue</p>
-          <button className="slide-in-2 px-10 py-1 text-2xl bg-slate-200 text-zinc-900">Shop now</button>
+          <Link to='/store'>
+            <button className="slide-in-2 px-10 py-1 text-2xl bg-slate-200 text-zinc-900">Shop now</button>
+          </Link>
         </div>
       </div>
       <footer className="text-center bg-black bg-opacity-50">Copyright © Jared588</footer>
