@@ -44,6 +44,11 @@ function Store() {
                             {shoe}
                         </div>
                     ))}
+                    {misc.map((item, index) => (
+                        <div key={index}>
+                            {item}
+                        </div>
+                    ))}
                   </div>
                 </div>
             </div>
@@ -76,6 +81,21 @@ const shoes = [
     CreateItem('shoeSneaker', 'Sneaker - white', '$39.99', 'white'),
     CreateItem('shoeSneaker', 'Sneaker - black', '$39.99', 'black'),
     CreateItem('shoeSneaker', 'Sneaker - gray', '$39.99', 'gray'),
+]
 
+const misc = [
+    // Glasses
+    CreateItem('sunglasses', 'Sunglasses - white', '$39.99', 'white'),
+    CreateItem('sunglasses', 'Sunglasses - black', '$39.99', 'black'),
+    // Tie
+    CreateItem('tie', 'Tie - white', '$39.99', 'white'),
+    CreateItem('tie', 'Tie - black', '$39.99', 'black'),
+    // Bow-tie
+    CreateItem('bow-tie', 'bow-tie - white', '$39.99', 'white'),
+    CreateItem('bow-tie', 'bow-tie - black', '$39.99', 'black'),
+    // Necklace
+    CreateItem('necklace', 'Necklace', '$39.99', 'white'),
+    // Hats
+    CreateItem('wizard-hat', 'Wizard-Hat', '$39.99', 'purple'),
 ]
 export default Store
