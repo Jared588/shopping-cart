@@ -38,7 +38,7 @@ function Store() {
                 <div className='flex-auto col-span-5 p-10'>
                     {/* Shirts */}
                     {(filter === 'all' || filter === 'shirts') &&
-                        <div data-testid="items-container" className="items-container gap-5 slide-in">
+                        <div data-testid="shirts-container" className="items-container gap-5 slide-in">
                             {shirts.map((shirt, index) => (
                                 <div key={index}>
                                     {shirt}
@@ -49,7 +49,7 @@ function Store() {
                     {filter === 'all' && <hr className='m-10'/>}
                     {/* Shoes */}
                     {(filter === 'all' || filter === 'shoes') &&
-                        <div data-testid="items-container" className="items-container gap-5 slide-in">
+                        <div data-testid="shoes-container" className="items-container gap-5 slide-in">
                             {shoes.map((shoe, index) => (
                                 <div key={index}>
                                     {shoe}
@@ -60,7 +60,7 @@ function Store() {
                     {filter === 'all' && <hr className='m-10'/>}
                     {/* Misc. */}
                     {(filter === 'all' || filter === 'misc') &&
-                        <div data-testid="items-container" className="items-container gap-5 slide-in">
+                        <div data-testid="misc-container" className="items-container gap-5 slide-in">
                             {misc.map((item, index) => (
                                 <div key={index}>
                                     {item}

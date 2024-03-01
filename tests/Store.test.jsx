@@ -31,7 +31,11 @@ describe('Store', () => {
                 <Store />
             </BrowserRouter>
         );
-        const itemsContainer = screen.getByTestId('items-container')
-        expect(itemsContainer.children.length).toBeGreaterThan(0)
+        const shirtsContainer = screen.getByTestId('shirts-container')
+        const shoesContainer = screen.getByTestId('shoes-container')
+        const miscContainer = screen.getByTestId('misc-container')
+        expect(shirtsContainer.children.length).toBeGreaterThan(0)
+        expect(shoesContainer.children.length).toBeGreaterThan(0)
+        expect(miscContainer.children.length).toBeGreaterThan(0)
     })
 })
