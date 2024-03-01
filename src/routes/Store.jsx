@@ -39,11 +39,17 @@ function Store() {
                             {shirt}
                         </div>
                     ))}
+                  </div>
+                  <hr className='m-10'/>
+                  <div data-testid="items-container" className="items-container gap-5 slide-in">
                     {shoes.map((shoe, index) => (
                         <div key={index}>
                             {shoe}
                         </div>
                     ))}
+                  </div>
+                  <hr className='m-10'/>
+                  <div data-testid="items-container" className="items-container gap-5 slide-in">
                     {misc.map((item, index) => (
                         <div key={index}>
                             {item}
