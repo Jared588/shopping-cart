@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider, Routes, Route, Navigate } from 're
 import App from '../App';
 import ErrorPage from './ErrorPage';
 import Store from './Store';
+import Cart from './Cart';
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -23,6 +24,11 @@ const Router = () => {
         <Route path="shoes" element={<Store />} />
         <Route path="shoes" element={<Store />} />
       </Routes>,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: '/cart',
+      element: <Cart />,
       errorElement: <ErrorPage />,
     },
   ]);
