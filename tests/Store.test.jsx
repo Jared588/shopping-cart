@@ -2,12 +2,15 @@ import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import Store from '../src/routes/Store';
 import { BrowserRouter } from 'react-router-dom';
+import { CartContext } from '../src/routes/Router';
 
 describe('Store', () => {
     it('renders store page', () => {
         render(
             <BrowserRouter>
-                <Store />
+                <CartContext.Provider value={{ addToCart: () => {}}}>
+                    <Store />
+                </CartContext.Provider>
             </BrowserRouter>
         );
         expect(screen.getByRole('heading', {name: /filter-heading/}).textContent).toMatch(/categories/i);
@@ -16,7 +19,9 @@ describe('Store', () => {
     it('renders categories', () => {
         render(
             <BrowserRouter>
-                <Store />
+                <CartContext.Provider value={{ addToCart: () => {}}}>
+                    <Store />
+                </CartContext.Provider>
             </BrowserRouter>
         );
         const categories = screen.getByRole('list', {name: /categories/}).children;
@@ -28,7 +33,9 @@ describe('Store', () => {
     it('renders items correctly', () => {
         render(
             <BrowserRouter>
-                <Store />
+                <CartContext.Provider value={{ addToCart: () => {}}}>
+                    <Store />
+                </CartContext.Provider>
             </BrowserRouter>
         );
         const shirtsContainer = screen.getByTestId('shirts-container')
