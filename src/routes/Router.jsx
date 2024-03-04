@@ -1,10 +1,25 @@
-import { createBrowserRouter, RouterProvider, Routes, Route, Navigate } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from 'react-router-dom';
 import App from '../App';
 import ErrorPage from './ErrorPage';
 import Store from './Store';
 import Cart from './Cart';
+import { useState, createContext } from 'react';
+
+export const CartContext = createContext();
 
 const Router = () => {
+  const [cart, setCart] = useState([]);
+
+  function addToCart(item) {
+    setCart((prevCart) => [...prevCart, item]);
+    console.log('added!')
+    console.log(item)
+  }
+
   const router = createBrowserRouter([
     {
       path: '/',
@@ -17,23 +32,22 @@ const Router = () => {
       errorElement: <ErrorPage />,
     },
     {
-      path: '/store/*',
-      element: <Routes>
-        <Route path="/" element={<Store />} />
-        <Route path="shirts" element={<Store />} />
-        <Route path="shoes" element={<Store />} />
-        <Route path="shoes" element={<Store />} />
-      </Routes>,
+      path: '/store',
+      element: <Store />,
       errorElement: <ErrorPage />,
     },
     {
       path: '/cart',
-      element: <Cart />,
+      element: <Cart cart={cart} setCart={setCart} />,
       errorElement: <ErrorPage />,
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <CartContext.Provider value={{ addToCart }}>
+      <RouterProvider router={router} />
+    </CartContext.Provider>
+  );
 };
 
 export default Router;
