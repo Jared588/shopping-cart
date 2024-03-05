@@ -19,7 +19,7 @@ const Router = () => {
 
     if(itemIndex >= 0) { // Check if the index is there
       const updatedCart = [...cart]; // Make copy
-      updatedCart[itemIndex].quantity += 1;  // Update value
+      updatedCart[itemIndex].quantity = parseInt(updatedCart[itemIndex].quantity) + 1;   // Update value
       setCart(updatedCart) ; // Update cart
     } else {
       setCart((prevCart) => [...prevCart, item]);
@@ -35,7 +35,7 @@ const Router = () => {
       quantity = 1;
     }
     const updatedCart = [...cart]; // Make copy
-    const itemIndex = updatedCart.findIndex(cartItem => cartItem === item); // Get correct item index
+    const itemIndex = updatedCart.findIndex(cartItem => cartItem.title === item.title); // Get correct item index
     updatedCart[itemIndex].quantity = quantity;  // Update value
     setCart(updatedCart) ; // Update cart
   }
