@@ -18,6 +18,10 @@ const Router = () => {
     setCart((prevCart) => [...prevCart, item]);
   }
 
+  function removeFromCart(itemToRemove) {
+    setCart(prevCart => prevCart.filter(item => item !== itemToRemove));
+  }
+
   const router = createBrowserRouter([
     {
       path: '/',
@@ -42,7 +46,7 @@ const Router = () => {
   ]);
 
   return (
-    <CartContext.Provider value={{ addToCart }}>
+    <CartContext.Provider value={{ removeFromCart, addToCart }}>
       <RouterProvider router={router} />
     </CartContext.Provider>
   );
