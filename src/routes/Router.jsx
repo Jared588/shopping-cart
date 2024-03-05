@@ -23,6 +23,9 @@ const Router = () => {
   }
 
   function handleQuantityChange(item, quantity) {
+    if(quantity < 1) {
+      quantity = 1
+    }
     const updatedCart = [...cart]; // Make copy
     const itemIndex = updatedCart.findIndex(cartItem => cartItem === item); // Get correct item index
     updatedCart[itemIndex].quantity = quantity;  // Update value
