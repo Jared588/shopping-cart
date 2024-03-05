@@ -15,7 +15,15 @@ const Router = () => {
   const [cart, setCart] = useState([]);
 
   function addToCart(item) {
-    setCart((prevCart) => [...prevCart, item]);
+    const itemIndex = cart.findIndex(cartItem => cartItem.title === item.title); // Get correct item index
+
+    if(itemIndex >= 0) { // Check if the index is there
+      const updatedCart = [...cart]; // Make copy
+      updatedCart[itemIndex].quantity += 1;  // Update value
+      setCart(updatedCart) ; // Update cart
+    } else {
+      setCart((prevCart) => [...prevCart, item]);
+    }
   }
 
   function removeFromCart(itemToRemove) {
@@ -24,7 +32,7 @@ const Router = () => {
 
   function handleQuantityChange(item, quantity) {
     if(quantity < 1) {
-      quantity = 1
+      quantity = 1;
     }
     const updatedCart = [...cart]; // Make copy
     const itemIndex = updatedCart.findIndex(cartItem => cartItem === item); // Get correct item index
@@ -56,7 +64,7 @@ const Router = () => {
   ]);
 
   return (
-    <CartContext.Provider value={{ removeFromCart, addToCart, handleQuantityChange }}>
+    <CartContext.Provider value={{ cart, removeFromCart, addToCart, handleQuantityChange }}>
       <RouterProvider router={router} />
     </CartContext.Provider>
   );
