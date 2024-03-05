@@ -41,6 +41,18 @@ export function CreateCartItem({ item }) {
   // Remove item from cart
   const { removeFromCart, handleQuantityChange } = useContext(CartContext);
 
+  // Ensure quantity value to be > 0
+  const validateQuantityChange = (event) => {
+    let quantity = event.target.value;
+    if (quantity > 0) {
+      handleQuantityChange(item, quantity);
+    } else {
+      quantity = 1 // Set value to 1
+      event.target.value = quantity; // Update input field value
+      handleQuantityChange(item, quantity);
+    }
+  };
+
   return (
     <div className="flex border p-3 my-3 rounded-xl bg-slate-400/20 justify-between">
       <div className='flex'>
@@ -54,7 +66,7 @@ export function CreateCartItem({ item }) {
         <svg className='w-8 cursor-pointer' onClick={() => removeFromCart(item)} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>delete</title><path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" fill="rgba(255, 255, 255, 0.87)"  /></svg>
         <p className='text-2xl'>
           Quantity:  
-          <input className='w-10 h-10 ml-4 mt-2' type="number" name="quantity" id="qua" defaultValue={1} min={1} onChange={(event) => handleQuantityChange(item, event.target.value)}/>
+          <input className='w-10 h-10 ml-4 mt-2' type="number" name="quantity" id="qua" defaultValue={1} min={1} onChange={validateQuantityChange}/>
         </p>
       </div>
     </div>
