@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Icons from '../assets/icons';
 
 export function CreateItem({ item, title, price, color }) {
+  // Import context
   const { addToCart } = useContext(CartContext);
 
   // Make an object to hold the values
@@ -15,12 +16,12 @@ export function CreateItem({ item, title, price, color }) {
     quantity: 1,
   };
 
-  // Selected Item
-  let selectedItem = Icons(color)[item] || null;
+  // Get Icon
+  let icon = Icons(color)[item] || null;
 
   return (
     <div className="w-48 h-fit flex flex-col border p-3 my-3 rounded-xl bg-slate-400/20">
-      <div className="">{selectedItem}</div>
+      <div className="">{icon}</div>
       <div className="border-t">
         <p className="text-2xl mt-1 text-slate-300">{title}</p>
         <p className="w-fit text-xl">${price}</p>
@@ -36,20 +37,20 @@ export function CreateItem({ item, title, price, color }) {
 }
 
 export function CreateCartItem({ item }) {
-  // Selected Item
-  let selectedItem = Icons(item.color)[item.item] || null;
-
-  // import context
+  // Import context
   const { cart, removeFromCart, handleQuantityChange } = useContext(CartContext);
 
   // Get quantity value from state
-  const itemIndex = cart.findIndex(cartItem => cartItem.title === item.title);
-  const currentQuantityValue = cart[itemIndex].quantity;
+  const itemIndex = cart.findIndex(cartItem => cartItem.title === item.title); // Get index
+  const currentQuantityValue = cart[itemIndex].quantity; // Get quantity
+
+  // Get Icon
+  let icon = Icons(item.color)[item.item] || null;
 
   return (
     <div className="flex border p-3 my-3 rounded-xl bg-slate-400/20 justify-between">
       <div className='flex'>
-        <div className="min-w-20 h-fit mr-3 self-center">{selectedItem}</div>
+        <div className="min-w-20 h-fit mr-3 self-center">{icon}</div>
         <div className="border-l p-2 pl-4">
           <p className="text-2xl mt-1 text-slate-300">{item.title}</p>
           <p className="text-xl">{item.price}</p>
