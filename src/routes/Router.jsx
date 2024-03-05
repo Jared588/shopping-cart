@@ -16,8 +16,6 @@ const Router = () => {
 
   function addToCart(item) {
     setCart((prevCart) => [...prevCart, item]);
-    console.log('added!')
-    console.log(item)
   }
 
   const router = createBrowserRouter([
