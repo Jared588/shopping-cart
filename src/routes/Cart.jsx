@@ -6,7 +6,7 @@ function Cart({ cart }) {
   // Sum Total
   let total = 0;
   for (let item of cart) {
-    total += (item.price * item.quantity);
+    total += (parseFloat(item.price) * item.quantity);
   }
 
   return (
@@ -28,7 +28,7 @@ function Cart({ cart }) {
             </div>
             <div className="pl-16 ml-10 border-l">
               <p>Checkout</p>
-              <p>Total: ${total}</p>
+              <p>Total: ${total.toFixed(2)}</p>
             </div>
           </div>
         )}
