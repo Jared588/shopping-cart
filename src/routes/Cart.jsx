@@ -6,7 +6,7 @@ function Cart({ cart }) {
   // Sum Total
   let total = 0;
   for (let item of cart) {
-    total += item.price;
+    total += (item.price * item.quantity);
   }
 
   return (

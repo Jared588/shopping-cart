@@ -22,6 +22,13 @@ const Router = () => {
     setCart(prevCart => prevCart.filter(item => item !== itemToRemove));
   }
 
+  function handleQuantityChange(item, quantity) {
+    const updatedCart = [...cart]; // Make copy
+    const itemIndex = updatedCart.findIndex(cartItem => cartItem === item); // Get correct item index
+    updatedCart[itemIndex].quantity = quantity;  // Update value
+    setCart(updatedCart) ; // Update cart
+  }
+
   const router = createBrowserRouter([
     {
       path: '/',
@@ -46,7 +53,7 @@ const Router = () => {
   ]);
 
   return (
-    <CartContext.Provider value={{ removeFromCart, addToCart }}>
+    <CartContext.Provider value={{ removeFromCart, addToCart, handleQuantityChange }}>
       <RouterProvider router={router} />
     </CartContext.Provider>
   );
