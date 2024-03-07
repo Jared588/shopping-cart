@@ -57,7 +57,9 @@ export function CreateCartItem({ item }) {
         </div>
       </div>
       <div className='flex flex-col place-items-end'>
-        <svg className='w-8 cursor-pointer' onClick={() => removeFromCart(item)} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>delete</title><path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" fill="rgba(255, 255, 255, 0.87)"  /></svg>
+        <button aria-label='delete' onClick={() => removeFromCart(item)}>
+          <svg className='w-8 cursor-pointer' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>delete</title><path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" fill="rgba(255, 255, 255, 0.87)"  /></svg>
+        </button>
         <p className='text-2xl'>
           Quantity:  
           <input className='w-10 h-10 ml-4 mt-2' type="number" name="quantity" id="qua" min={1} value={currentQuantityValue} onChange={(event) => handleQuantityChange(item, event.target.value)}/>

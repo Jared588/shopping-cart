@@ -5,8 +5,10 @@ import { CreateCartItem } from '../components/CreateItem';
 function Cart({ cart }) {
   // Sum Total
   let total = 0;
-  for (let item of cart) {
-    total += (parseFloat(item.price) * item.quantity);
+  if (cart && cart.length > 0) {
+    for (let item of cart) {
+      total += (parseFloat(item.price) * item.quantity);
+    }
   }
 
   return (
@@ -38,8 +40,7 @@ function Cart({ cart }) {
 }
 
 Cart.propTypes = {
-  cart: PropTypes.array,
-  setCart: PropTypes.func,
+  cart: PropTypes.array
 };
 
 export default Cart;
