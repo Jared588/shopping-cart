@@ -53,7 +53,7 @@ export function CreateCartItem({ item }) {
         <div className="min-w-20 h-fit mr-3 self-center">{icon}</div>
         <div className="border-l p-2 pl-4">
           <p className="text-2xl mt-1 text-slate-300">{item.title}</p>
-          <p className="text-xl">{item.price}</p>
+          <p className="text-xl">${item.price}</p>
         </div>
       </div>
       <div className='flex flex-col place-items-end'>
