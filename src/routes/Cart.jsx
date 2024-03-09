@@ -28,9 +28,12 @@ function Cart({ cart }) {
                 <CreateCartItem key={index} item={item} />
               ))}
             </div>
-            <div className="pl-16 ml-10 border-l">
-              <p>Checkout</p>
-              <p>Total: ${total.toFixed(2)}</p>
+            <div className="pl-16 ml-10 border-l text-nowrap">
+              <p className='text-left text-4xl'>Cart Summary</p>
+              <p className='text-rightborder-t-2 text-3xl mt-4'>Total:</p>
+              <p className='text-right text-3xl'>${total.toFixed(2)}</p>
+              <button className='text-xl bg-gray-600 rounded-lg px-4 py-1 hover:bg-gray-500'>Proceed to Checkout</button>
+              <p></p>
             </div>
           </div>
         )}
