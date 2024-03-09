@@ -13,6 +13,7 @@ export const CartContext = createContext();
 
 const Router = () => {
   const [cart, setCart] = useState([]);
+  const [showItemAddedMessage, setShowItemAddedMessage] = useState(false);
 
   function addToCart(item) {
     const itemIndex = cart.findIndex(cartItem => cartItem.title === item.title); // Get correct item index
@@ -24,6 +25,12 @@ const Router = () => {
     } else {
       setCart((prevCart) => [...prevCart, item]);
     }
+
+    // Display added message
+    setShowItemAddedMessage(true);
+    setTimeout(() => {
+        setShowItemAddedMessage(false);
+    }, 1900); // timer must be slightly less than animation timer (2s in this case)
   }
 
   function removeFromCart(itemToRemove) {
@@ -53,7 +60,7 @@ const Router = () => {
     },
     {
       path: '/store',
-      element: <Store />,
+      element: <Store showItemAddedMessage={showItemAddedMessage}/>,
       errorElement: <ErrorPage />,
     },
     {

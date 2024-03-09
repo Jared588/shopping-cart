@@ -2,8 +2,9 @@ import { useState } from 'react';
 import CreateCategory from '../components/CreateCategory';
 import { catalogue } from '../Catalogue';
 import Header from '../components/Header';
+import PropTypes from 'prop-types';
 
-function Store() {
+function Store({ showItemAddedMessage }) {
     const [filter, setFilter] = useState('shirts');
 
     return (
@@ -27,7 +28,15 @@ function Store() {
                     {(filter === 'misc') && <CreateCategory name='misc' array={catalogue.misc} />}           
                 </div>
             </div>
+            {showItemAddedMessage && (
+                <div className="fixed px-8 py-4 mb-10 bg-green-400 text-black text-4xl pop-in" style={{right:0, bottom:0}}>Added to Cart!</div>
+            )}
         </div>
     )
 }
+
+Store.propTypes = {
+    showItemAddedMessage: PropTypes.bool,
+}
+
 export default Store
