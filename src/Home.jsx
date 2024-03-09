@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className="flex flex-col min-h-svh justify-between bg-black bg-opacity-50">
       <Header />
-      <div className="text-5xl bg-black bg-opacity-50 border-t flex flex-auto justify-left items-center text-left px-16">
+      <div className="text-5xl bg-black bg-opacity-50 border-t flex flex-auto justify-center sm:justify-start items-center text-center sm:text-left sm:px-16">
         <div>
           <p className="slide-in mb-5 text-6xl">Style. Simplified.</p>
           <p className="slide-in-2 mb-2 text-3xl">Browse our catalogue</p>
