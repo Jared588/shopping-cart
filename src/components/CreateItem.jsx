@@ -48,7 +48,7 @@ export function CreateCartItem({ item }) {
   let icon = Icons(item.color)[item.item] || null;
 
   return (
-    <div className="flex border p-3 my-3 rounded-xl bg-slate-400/20 justify-between">
+    <div className="flex flex-col border p-3 my-3 rounded-xl bg-slate-400/20 justify-between md:flex-row">
       <div className='flex'>
         <div className="min-w-20 h-fit mr-3 self-center">{icon}</div>
         <div className="border-l p-2 pl-4">

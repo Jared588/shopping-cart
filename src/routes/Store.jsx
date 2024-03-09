@@ -5,20 +5,20 @@ import Header from '../components/Header';
 
 function Store() {
     const [filter, setFilter] = useState('shirts');
+
     return (
         <div className="flex flex-col min-h-svh justify-between bg-black bg-opacity-50">
-        <Header />
-        <div className='bg-neutral-300 text-black text-center font-semibold fade-in'>Dont Miss Our 50% Sale!</div>
-            <div className="text-5xl bg-black bg-opacity-80 border-t grid grid-cols-6 flex-auto px-16 py-10 overflow-hidden">
-                <div className='border-r col-span-1 flex flex-col'>
-                    <h2 aria-label='filter-heading' className='text-4xl font-semibold slide-in text-slate-500'>Categories</h2>
-                    <ul aria-label='categories' className='text-2xl px-2 py-6 space-y-4 *:cursor-pointer slide-in-2'>
+            <Header />
+            <div className="text-5xl bg-black bg-opacity-80 border-t flex flex-col lg:flex-row flex-auto md:px-16 lg:py-10 overflow-hidden">
+                <nav className='flex-col lg:pr-8 mb-10 border-b lg:border-r lg:border-b-0 lg:flex'>
+                    <h2 aria-label='filter-heading' className='hidden lg:block pb-6 text-4xl font-semibold slide-in text-slate-500 text-center'>Categories</h2>
+                    <ul aria-label='categories' className="flex justify-between py-5 lg:flex-col text-center lg:text-left text-2xl px-2 pb-4 lg:space-y-4 *:cursor-pointer slide-in-2">
                         <li onClick={() => setFilter('shirts')}>Shirts</li>
                         <li onClick={() => setFilter('shoes')}>Shoes</li>
                         <li onClick={() => setFilter('misc')}>Misc.</li>
                     </ul>
-                </div>
-                <div className='flex-auto col-span-5 p-10'>
+                </nav>
+                <div className='flex-auto sm:px-10'>
                     {/* Shirts */}
                     {(filter === 'shirts') && <CreateCategory name='shirts' array={catalogue.shirts} />}
                     {/* Shoes */}

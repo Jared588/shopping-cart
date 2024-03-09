@@ -5,7 +5,6 @@ function Home() {
   return (
     <div className="flex flex-col min-h-svh justify-between bg-black bg-opacity-50">
       <Header />
-      <div className='bg-neutral-300 text-black text-center font-semibold fade-in'>Dont Miss Our 50% Sale!</div>
       <div className="text-5xl bg-black bg-opacity-50 border-t flex flex-auto justify-left items-center text-left px-16">
         <div>
           <p className="slide-in mb-5 text-6xl">Style. Simplified.</p>
