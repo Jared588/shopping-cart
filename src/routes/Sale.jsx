@@ -14,15 +14,17 @@ function Sale({ showItemAddedMessage }) {
                     <CreateCategory name='sale' array={catalogue.sale} />          
                 </div>
             </div>
-            {showItemAddedMessage && (
-                <div className="fixed px-8 py-4 mb-10 bg-green-400 text-black text-4xl pop-in" style={{right:0, bottom:0}}>Added to Cart!</div>
+            {showItemAddedMessage.toggle && (
+                <div className="fixed px-8 py-4 mb-10 bg-green-400 text-black text-4xl pop-in" style={{ right: 0, bottom: 0 }}>
+                Added to {showItemAddedMessage.type}!
+                </div>
             )}
         </div>
     )
 }
 
 Sale.propTypes = {
-    showItemAddedMessage: PropTypes.bool,
+    showItemAddedMessage: PropTypes.object,
 }
 
 export default Sale;
