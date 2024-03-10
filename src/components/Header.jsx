@@ -18,7 +18,9 @@ function Header() {
                     <Link to='/store'>
                         <p>Store</p>
                     </Link>
-                    <p>Sale</p>
+                    <Link to='/sale'>
+                        <p>Sale</p>
+                    </Link>
                 </nav>
                 <nav aria-label='secondary-nav' className="hidden items-center justify-center text-2xl space-x-10 *:cursor-pointer md:flex md:visible">
                     <svg className="w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>account-outline</title><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6M12,13C14.67,13 20,14.33 20,17V20H4V17C4,14.33 9.33,13 12,13M12,14.9C9.03,14.9 5.9,16.36 5.9,17V18.1H18.1V17C18.1,16.36 14.97,14.9 12,14.9Z" fill="rgba(255, 255, 255, 0.87)" /></svg>

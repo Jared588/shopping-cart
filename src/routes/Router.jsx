@@ -6,6 +6,7 @@ import {
 import App from '../App';
 import ErrorPage from './ErrorPage';
 import Store from './Store';
+import Sale from './Sale';
 import Cart from './Cart';
 import { useState, createContext } from 'react';
 
@@ -61,6 +62,11 @@ const Router = () => {
     {
       path: '/store',
       element: <Store showItemAddedMessage={showItemAddedMessage}/>,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: '/sale',
+      element: <Sale showItemAddedMessage={showItemAddedMessage}/>,
       errorElement: <ErrorPage />,
     },
     {
