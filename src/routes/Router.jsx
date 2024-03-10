@@ -112,7 +112,7 @@ const Router = () => {
   ]);
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, wishlist, addToWishlist, removeFromWishlist, handleQuantityChange }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, wishlist, addToWishlist, removeFromWishlist, handleQuantityChange, showItemAddedMessage }}>
       <RouterProvider router={router} />
     </CartContext.Provider>
   );

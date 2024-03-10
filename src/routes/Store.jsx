@@ -28,7 +28,7 @@ function Store({ showItemAddedMessage }) {
                     {(filter === 'misc') && <CreateCategory name='misc' array={catalogue.misc} />}           
                 </div>
             </div>
-            {showItemAddedMessage.toggle && (
+            {showItemAddedMessage?.toggle && (
                 <div className="fixed px-8 py-4 mb-10 bg-green-400 text-black text-4xl pop-in" style={{ right: 0, bottom: 0 }}>
                 Added to {showItemAddedMessage.type}!
                 </div>

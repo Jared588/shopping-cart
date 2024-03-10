@@ -23,7 +23,7 @@ describe('Home component', () => {
     );
     const navElement = screen.getByRole('navigation', { name: /primary-nav/ });
     expect(navElement).toBeInTheDocument();
-    expect(navElement.children[0].textContent).toMatch(/Store/i);
-    expect(navElement.children[1].textContent).toMatch(/Sale/i);
+    expect(navElement.children[1].textContent).toMatch(/Store/i);
+    expect(navElement.children[2].textContent).toMatch(/Sale/i);
   });
 });
