@@ -9,6 +9,7 @@ import Store from './Store';
 import Sale from './Sale';
 import Wishlist from './Wishlist';
 import Cart from './Cart';
+import Account from './Account';
 import { useState, createContext } from 'react';
 
 export const CartContext = createContext();
@@ -96,6 +97,11 @@ const Router = () => {
     {
       path: '/wishlist',
       element: <Wishlist wishlist={wishlist} showItemAddedMessage={showItemAddedMessage}/>,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: '/account',
+      element: <Account />,
       errorElement: <ErrorPage />,
     },
     {
